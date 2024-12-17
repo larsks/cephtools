@@ -18,6 +18,7 @@ spec:
       - name: cephtools
         workingDir: /etc/ceph
         image: ghcr.io/larsks/cephtools:latest
+        imagePullPolicy: Always
         volumeMounts:
         - name: external-cluster-details
           mountPath: /ceph

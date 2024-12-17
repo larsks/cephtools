@@ -1,0 +1,17 @@
+FROM quay.io/fedora/fedora:41
+
+RUN dnf -y install \
+  less \
+  ceph-common \
+  iproute \
+  iputils \
+  tcpdump \
+  traceroute \
+  python3-pip
+
+WORKDIR /scripts
+COPY requirements.txt  /scripts/
+RUN python3 -m pip install --root-user-action ignore -r requirements.txt
+COPY . /scripts/
+
+WORKDIR /etc/ceph

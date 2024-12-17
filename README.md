@@ -16,4 +16,3 @@ kubectl apply -k cephtools-privileged
 
 In general you will not need the privileged version.
 
-NB: You may need to update the `image` in `cephtools/deployment.yaml` to account for different versions of ODF. At the time of this writing, the Deployment uses the `v4.17` image.

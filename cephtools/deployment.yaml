@@ -13,21 +13,16 @@ spec:
           secretName: rook-ceph-external-cluster-details
       - name: workspace
         emptyDir: {}
-      - name: scripts
-        configMap:
-          name: cephtools-scripts
 
       containers:
       - name: cephtools
         workingDir: /etc/ceph
-        image: registry.redhat.io/odf4/cephcsi-rhel9:v4.17
+        image: ghcr.io/larsks/cephtools:latest
         volumeMounts:
         - name: external-cluster-details
           mountPath: /ceph
         - name: workspace
           mountPath: /etc/ceph
-        - name: scripts
-          mountPath: /scripts
         command:
         - bash
         - -c

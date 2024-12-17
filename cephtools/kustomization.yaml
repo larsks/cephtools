@@ -7,8 +7,3 @@ resources:
 - role.yaml
 - rolebinding.yaml
 - deployment.yaml
-
-configMapGenerator:
-- name: cephtools-scripts
-  files:
-  - scripts/generate-ceph-config.py

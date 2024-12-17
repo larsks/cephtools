@@ -31,16 +31,10 @@ kubectl apply -k https://github.com/larsks/cephtools//cephtools
 To access the container:
 
 ```
-k exec -it deploy/cephtools -- bash
+k exec -it deploy/cephtools -- bash -l
 ```
 
-You will find yourself in the `/etc/ceph` directory. Source the `ceph.env` file:
-
-```
-. ceph.env
-```
-
-Now you should be able to run `ceph` commands:
+You will find yourself in the `/etc/ceph` directory. You should be able to run `ceph` commands:
 
 ```
 bash-5.2$ ceph health
@@ -58,3 +52,4 @@ csi-vol-b9db3957-7b07-4404-a602-c9f9cb2a57af
 csi-vol-d0cc6e97-086d-4a04-bf03-b5bf1b480924
 csi-vol-fbd8ae27-808e-48a9-81ca-9c9af4352c62
 ```
+

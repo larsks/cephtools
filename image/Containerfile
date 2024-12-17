@@ -13,5 +13,6 @@ WORKDIR /scripts
 COPY requirements.txt  /scripts/
 RUN python3 -m pip install --root-user-action ignore -r requirements.txt
 COPY . /scripts/
+COPY load-ceph-vars.sh /etc/profile.d/
 
 WORKDIR /etc/ceph

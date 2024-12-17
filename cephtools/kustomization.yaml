@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  app: cephtools
+resources:
+- sa.yaml
+- role.yaml
+- rolebinding.yaml
+- deployment.yaml
+
+configMapGenerator:
+- name: cephtools-scripts
+  files:
+  - scripts/generate-ceph-config.py
